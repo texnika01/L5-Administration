@@ -201,7 +201,7 @@ return [
         App\Providers\HistoryServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Cmgmyr\Messenger\MessengerServiceProvider::class,
     ],
 
     /*
