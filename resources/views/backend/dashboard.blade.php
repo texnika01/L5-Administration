@@ -92,7 +92,6 @@
         </div>
         <!-- /.col -->
       </div>
-
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box bg-aqua">
@@ -100,7 +99,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Users Register</span>
-              <span class="info-box-number">41,410</span>
+              <span class="info-box-number">{{$user->count()}}</span>
 
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
@@ -137,8 +136,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Warning Sites</span>
-              <span class="info-box-number">41,410</span>
-
+                    <span class="info-box-number">41,410</span>
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
               </div>
