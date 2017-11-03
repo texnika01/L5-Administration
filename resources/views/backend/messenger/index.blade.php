@@ -13,8 +13,7 @@
     <!-- start messages content -->
     <div class="row">
         <div class="col-md-3">
-            <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Compose</a>
-
+            <a href="{{ route('admin.messages.create') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
             <div class="box box-solid">
                 <div class="box-header with-border">
                     <h3 class="box-title">Folders</h3>
@@ -91,7 +90,7 @@
                         <!-- /.btn-group -->
                         <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
                         <div class="pull-right">
-                            1-50/200
+                            {{$threads->count()}}
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
                                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
@@ -108,7 +107,7 @@
                                 <tr>
                                     <td><input type="checkbox"></td>
                                     <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-                                    <td class="mailbox-name"><a href="read-mail.html">{{ $thread->creator()->first_name }}</a></td>
+                                    <td class="mailbox-name"><a href="#">{{ $thread->creator()->first_name }}</a></td>
                                     <td class="mailbox-subject">{!! link_to('admin/messages/' . $thread->id, $thread->subject) !!}</td>
                                     <td class="mailbox">{{ $thread->latestMessage->body }}</td>
                                     <td class="mailbox-attachment"></td>
@@ -116,7 +115,11 @@
                                 </tr>
                             @endforeach
                             @else
-                                <tr>Sorry, no threads.</tr>
+                                <tr>
+                                    <td class="mailbox">
+                                        <p style="text-align: center">Sorry, no threads.</p>
+                                    </td>
+                                </tr>
                             @endif
                             </tbody>
                         </table>
@@ -138,7 +141,7 @@
                         <!-- /.btn-group -->
                         <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
                         <div class="pull-right">
-                            1-50/200
+                            {{$threads->count()}}
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
                                 <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>

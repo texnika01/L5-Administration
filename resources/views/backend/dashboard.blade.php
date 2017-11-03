@@ -100,7 +100,6 @@
             <div class="info-box-content">
               <span class="info-box-text">Users Register</span>
               <span class="info-box-number">{{$user->count()}}</span>
-
               <div class="progress">
                 <div class="progress-bar" style="width: 70%"></div>
               </div>
